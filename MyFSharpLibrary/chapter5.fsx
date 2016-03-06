@@ -65,3 +65,21 @@ let testInput =
 type IntType =
     | IntSome of int
     | IntNone
+
+//Generics - Write a function that takes an option and returns the value
+//Automatic Generalisation
+//F# interactive evaluated this as :
+//  "val readValue : opt:'a option -> 'a
+let readValue opt = 
+    match opt with
+    | Some(v) -> v
+    | None -> failwith "No value!"
+
+//Higher order functions revisited
+let nums = [4; 9; 1; 8; 6]
+let evens = List.filter (fun x -> x % 2 = 0) nums
+
+//Partial function evaluation (function currying)
+let add x y = x + y
+let add10 = add 10
+let add10to15 = add10 15
