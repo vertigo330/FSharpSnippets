@@ -1,0 +1,8 @@
+C:\Projects\Playpen\MyFSharpLibrary\MyFSharpLibrary\bin\Debug\MyFSharpLibrary.XML
+C:\Projects\Playpen\MyFSharpLibrary\MyFSharpLibrary\bin\Debug\MyFSharpLibrary.pdb
+C:\Projects\Playpen\MyFSharpLibrary\MyFSharpLibrary\bin\Debug\FSharp.Core.dll
+C:\Projects\Playpen\MyFSharpLibrary\MyFSharpLibrary\bin\Debug\FSharp.Core.xml
+C:\Projects\Playpen\MyFSharpLibrary\MyFSharpLibrary\obj\Debug\MyFSharpLibrary.fsprojResolveAssemblyReference.cache
+C:\Projects\Playpen\MyFSharpLibrary\MyFSharpLibrary\obj\Debug\MyFSharpLibrary.pdb
+C:\Projects\Playpen\MyFSharpLibrary\MyFSharpLibrary\bin\Debug\MyFSharpLibrary.exe
+C:\Projects\Playpen\MyFSharpLibrary\MyFSharpLibrary\obj\Debug\MyFSharpLibrary.exe
