@@ -79,7 +79,7 @@ let readValue opt =
 let nums = [4; 9; 1; 8; 6]
 let evens = List.filter (fun x -> x % 2 = 0) nums
 
-//Partial function evaluation (function currying)
-let add x y = x + y
-let add10 = add 10
-let add10to15 = add10 15
+//Lambda syntax, partial function evaluation, and function currying
+let Add = fun x y -> x + y          //here we use the shorthand lamba syntax to def the function
+let AddTen = Add 10                 //partially evaluate the function with one argument
+let AddTenAndSeven = AddTen 7        //complete the partial evauation by providing the final argument
