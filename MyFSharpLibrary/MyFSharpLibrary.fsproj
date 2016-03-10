@@ -54,6 +54,7 @@
     <None Include="chapter4.fsx" />
     <None Include="countries.csv" />
     <None Include="chapter5.fsx" />
+    <None Include="chaper6.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
