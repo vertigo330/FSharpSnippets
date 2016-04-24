@@ -1,4 +1,6 @@
-﻿open System
+﻿#load "types.fsx"
+open types
+open System
 
 //Use a tuple to return multiple values
 let divide x y = 
@@ -16,12 +18,6 @@ let printMessage (x, y) message =
     printfn "[%d %d] %s" x y message
 
 printMessage (fst(nested)) (snd(nested))
-
-//Declare a discriminated union type
-type Schedule = 
-    | Never
-    | Once of DateTime
-    | Recurring of (DateTime * TimeSpan)
 
 //Declaring a few values of Schdule type
 let tomorrow = DateTime.Now.AddDays(1.0)
