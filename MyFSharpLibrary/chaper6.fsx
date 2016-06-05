@@ -57,3 +57,28 @@ let addNumbers =
         match readInput() with
         | None -> None
         | Some(j) -> Some(i + j)
+
+// Using Option.map
+// (('a -> 'b) -> 'a option -> 'b option)
+let addNumbersMap =
+    match readInput() with
+    | None -> None
+    | Some(i) -> readInput() |> Option.map(fun j -> i + j)
+
+// Using Option.bind to replace the outer match
+// (('a -> 'b option) -> 'a option -> 'b option)
+let addNumbersBind = 
+    readInput() |> Option.bind (fun first -> readInput() |> Option.map(fun second -> first + second))
+
+//Fuction composition
+let statusByPopulation = fun population -> 
+    match population with
+    | n when n > 1000000 -> "City"
+    | n when n > 5000 -> "Town"
+    | _ -> "Village"
+
+let places = [("Johannesburg", 1180152);
+              ("Krugersdorp", 10521);
+              ("Hillsborough", 230) ]
+
+places |> List.map(snd >> statusByPopulation)
