@@ -82,3 +82,29 @@ let places = [("Johannesburg", 1180152);
               ("Hillsborough", 230) ]
 
 places |> List.map(snd >> statusByPopulation)
+
+//Type inference & adding type annotations
+Option.map(fun dt->dt.Year) (Some(System.DateTime.Now))     //Cant infer the type
+Option.map(fun (dt:System.DateTime)->dt.Year) (Some(System.DateTime.Now))   //Type annotation added
+
+Some(System.DateTime.Now) |> Option.map(fun dt->dt.Year)     //By using the pipeline operator we dont need the type annotation at all!
+
+//Lists (again)
+//Defining our own functional list
+type List<'T> = 
+    | Nil
+    | Cons of 'T * List<'T>
+
+let list = Cons(1, Cons(2, Cons(3, Nil)))
+
+//List.map and List.filter
+open System
+let nums = [4; 9; 1; 8; 6]
+
+let strings = nums |> List.map(fun x -> Convert.ToString(x) + " is a string!")  //List.map is projection
+let evens = nums |> List.filter(fun x-> (x % 2) = 0)    //List.filter is...umm...filtering
+
+//Project and filter
+let cities = [ ("Seattle", 594210);  ("Prague", 1188126); ("New York", 7180000); ("Grantchester", 552); ("Cambridge", 117900)]
+
+let names = cities |> List.filter(fun x -> snd(x) < 1000) |> List.map fst

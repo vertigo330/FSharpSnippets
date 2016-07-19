@@ -1,6 +1,7 @@
-﻿#load "types.fsx"
-open types
+﻿//Working with the sheduler from ch5
+#load "common.fsx"
 open System
+open common
 
 //Use a tuple to return multiple values
 let divide x y = 
