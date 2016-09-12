@@ -57,6 +57,9 @@
     <None Include="chapter5.fsx" />
     <None Include="common.fsx" />
     <None Include="chapter6.fsx" />
+    <Content Include="document.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
