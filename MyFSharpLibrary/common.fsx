@@ -13,3 +13,12 @@ let readInput() =
     match Int32.TryParse(s) with
     |(true, parsed) -> Some(parsed)
     |_ -> None
+
+type Customer = 
+    {
+        Name : string
+        Income: int
+        YearsInJob: int
+        UsesCreditCard: bool
+        CriminalRecord: bool
+    }
