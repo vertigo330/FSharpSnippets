@@ -70,3 +70,32 @@ Bob |> earnsTooLittle
 
 //Now when we run the same test with the same parameter, the result is different. Like magic!
 Bob |> earnsTooLittle
+
+//Use a record type to represent a named list of functions
+type ClientTest =
+    { Check : Customer -> bool
+      Report : Customer -> unit }
+
+let checkCriminal(client) = client.CriminalRecord = true
+let reportCriminal(client) = printfn "Checking 'Criminal Record' of '%s' failed!" client.Name
+
+let checkIncome(client) = client.Income < 30000
+let reportIncome(client) = printfn "Checking 'Income' of '%s' failed! Less then 30000" client.Name
+
+let checkJobYears(client) = client.YearsInJob < 2
+let reportJobYears(client) = printfn "Checking 'Job Years' of '%s' failed! Less then 2" client.Name
+
+let testsWithReport = 
+    [ {Check = checkCriminal; Report = reportCriminal };
+      {Check = checkIncome; Report = reportIncome };
+      {Check = checkJobYears; Report = reportJobYears }; ]
+
+let testClientWithReports(client) =
+    let issues = testsWithReport |> List.filter(fun f->f.Check(client))
+    let suitable = issues.Length <= 1
+    for i in issues do
+        i.Report(client)
+        printfn "Offer loan %s"
+            (if (suitable) then "YES" else "NO" )
+
+testClientWithReports(Bob) 
